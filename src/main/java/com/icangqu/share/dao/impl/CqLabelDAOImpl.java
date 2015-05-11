@@ -3,6 +3,7 @@ package com.icangqu.share.dao.impl;
 import com.icangqu.share.dao.CqLabelDAO;
 import com.icangqu.share.dao.impl.support.Condition;
 import com.icangqu.share.dao.impl.support.QuickCondition;
+import com.icangqu.share.enums.IntBool;
 import com.icangqu.share.model.entity.CqLabel;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +23,7 @@ public class CqLabelDAOImpl extends CqAbstractHibernateDAO<CqLabel, Integer>  im
     public CqLabel getByLabelId(Integer labelId) {
         Condition condition = new QuickCondition(CqLabel.class);
         condition.addEqual("labelId", labelId);
+        condition.addEqual("status", IntBool.TRUE.val);
         List<CqLabel> labels = findByCondition(condition, null);
         if (labels.size() != 0) {
             return labels.get(0);

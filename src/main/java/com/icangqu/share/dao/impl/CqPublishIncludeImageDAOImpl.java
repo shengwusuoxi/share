@@ -1,7 +1,10 @@
 package com.icangqu.share.dao.impl;
 
 import com.icangqu.share.dao.CqPublishIncludeImageDAO;
+import com.icangqu.share.dao.impl.support.Condition;
+import com.icangqu.share.dao.impl.support.QuickCondition;
 import com.icangqu.share.model.entity.CqPublishIncludeImage;
+import com.icangqu.share.model.entity.CqUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +21,10 @@ public class CqPublishIncludeImageDAOImpl extends CqAbstractHibernateDAO<CqPubli
 
     @Override
     public List<CqPublishIncludeImage> getByPublishId(Integer publishId) {
-        return null;
+        Condition condition = new QuickCondition(CqPublishIncludeImage.class);
+        condition.addEqual("publishId", publishId);
+        List<CqPublishIncludeImage> includeImages = findByCondition(condition, null);
+        return includeImages;
     }
 
 }

@@ -14,46 +14,35 @@ public class CqShareLabelDto extends CqLabel {
 		super();
 	}
 
-	public String getCreatorName() {
-		return creatorName;
-	}
-	
+    public String getCreatorName() {
+        return creatorName;
+    }
 
-	public List<CqSimplePublishDto> getSimplePublishList() {
-		return simplePublishList;
-	}
+    public void setCreatorName(String creatorName) {
+        this.creatorName = creatorName;
+    }
 
-	public void setSimplePublishList(List<CqSimplePublishDto> simplePublishList) {
-		this.simplePublishList = simplePublishList;
-	}
+    public String getCreatorPortraitUrl() {
+        return creatorPortraitUrl;
+    }
 
-	public void setCreatorName(String creatorName) {
-		this.creatorName = creatorName;
-	}
-	
-	public String getCreatorPortraitUrl() {
-		return creatorPortraitUrl;
-	}
-	
-	public void setCreatorPortraitUrl(String creatorPortraitUrl) {
-		this.creatorPortraitUrl = creatorPortraitUrl;
-	}
-	
-	public List<CqSimplePublishDto> getSimpleUserPublishDtoList() {
-		return simplePublishList;
-	}
+    public void setCreatorPortraitUrl(String creatorPortraitUrl) {
+        this.creatorPortraitUrl = creatorPortraitUrl;
+    }
 
-	public void setSimpleUserPublishDtoList(List<CqSimplePublishDto> simplePublishList) {
-		this.simplePublishList = simplePublishList;
-	}
+    public String getCreateDate() {
+        return createDate;
+    }
 
-	public String getCreateDate() {
-		return createDate;
-	}
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
 
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
-	}
-	
-	
+    public List<CqSimplePublishDto> getSimplePublishList() {
+        return simplePublishList;
+    }
+
+    public void setSimplePublishList(List<CqSimplePublishDto> simplePublishList) {
+        this.simplePublishList = simplePublishList;
+    }
 }

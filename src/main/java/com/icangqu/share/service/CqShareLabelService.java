@@ -41,7 +41,7 @@ public class CqShareLabelService {
     private CqPublishBelongLabelDAO cqPublishBelongLabelDAO;
 
 
-    public CqShareLabelDto getShareLabelDetailByShareID(Integer shareId) {
+    public CqShareLabelDto getShareLabelDetailByShareID(String shareId) {
         CqShareLabelDto dto = new CqShareLabelDto();
         CqShareLabel shareLabel = cqShareLabelDAO.getByShareId(shareId);
         if (shareLabel == null || (!IntBool.TRUE.val.equals(shareLabel.getStatus()))) {
@@ -105,7 +105,7 @@ public class CqShareLabelService {
             CqSimplePublishDto simplePublishDto = new CqSimplePublishDto();
 
             List<CqPublishIncludeImage> cqPublishIncludeImages = cqPublishIncludeImageDAO.getByPublishId(publishId);
-            if (cqPublishIncludeImages == null && cqPublishIncludeImages.size() > 0) {
+            if (cqPublishIncludeImages != null && cqPublishIncludeImages.size() > 0) {
                 simplePublishDto.setPublishImageUrl(cqPublishIncludeImages.get(0).getImageUrl());
             }else{
                 continue;
@@ -121,7 +121,7 @@ public class CqShareLabelService {
             simplePublishDtoList.add(simplePublishDto);
         }
 
-        dto.setSimpleUserPublishDtoList(simplePublishDtoList);
+        dto.setSimplePublishList(simplePublishDtoList);
 
         return dto;
     }

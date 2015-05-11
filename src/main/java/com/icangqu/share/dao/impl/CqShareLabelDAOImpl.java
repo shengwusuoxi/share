@@ -12,14 +12,14 @@ import java.util.List;
  * Created by TangLiuJun on 2015/5/11.
  */
 @Repository("cqShareLabelDAOImpl")
-public class CqShareLabelDAOImpl extends CqAbstractHibernateDAO<CqShareLabel, Integer>  implements CqShareLabelDAO {
+public class CqShareLabelDAOImpl extends CqAbstractHibernateDAO<CqShareLabel, String>  implements CqShareLabelDAO {
     public CqShareLabelDAOImpl() {
         super();
         setClazz(CqShareLabel.class);
     }
 
     @Override
-    public CqShareLabel getByShareId(Integer shareId) {
+    public CqShareLabel getByShareId(String shareId) {
         Condition condition = new QuickCondition(CqShareLabel.class);
         condition.addEqual("shareId", shareId);
         List<CqShareLabel> shareLabels = findByCondition(condition, null);
