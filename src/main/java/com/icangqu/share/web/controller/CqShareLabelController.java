@@ -30,7 +30,7 @@ public class CqShareLabelController extends CqBaseController {
     public ModelAndView shareLabel(@RequestParam String shareId) {
         ModelAndView mv = new ModelAndView("shareLabel");
         CqShareLabelDto dto = shareLabelService.getShareLabelDetailByShareID(shareId);
-        mv.addObject("dto", dto);
+        mv.addObject("d", dto);
         return mv;
     }
 
